@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Страница не найдена</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #DCD7C0;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+			color: #665238;
+            font-size: 80px;
+			font-weight: bold;
+        }
+
+        p {
+			color: #573F3F;
+            font-size: 20px;
+			font-weight: bold;
+        }
+
+        a {
+            color: #856363;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+		@keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+		img {
+            animation: shake 0.8s infinite;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>404 - Страница потеряна :(</h1>
+    <p>...прямо как студенты перед сессией</p>
+    <p>Пожалуйста, вернитесь на <a href="index.html">главную страницу</a>.</p>
+	<img src="img/404_img.png" alt="404 Error Image">
+	<!-- SVG --> 
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100px" height="100px">
+	  <!-- Анимация для звезды -->
+	  <polygon points="50,5 65,40 100,40 70,60 80,95 50,75 20,95 30,60 0,40 35,40" fill="red">
+		<animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" /> 
+		<animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="2s" repeatCount="indefinite" />
+	  </polygon>
+	</svg>
+
+</body>
+</html>

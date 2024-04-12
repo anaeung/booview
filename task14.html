@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Диаграмма статистика жанров литературы</title>
+	<!-- Подключение библиотеки -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="myChart" width="600" height="275"></canvas>
+
+    <script>
+        // данные для диаграммы
+        var genres = ['Триллеры', 'Романы', 'Детективы', 'Фэнтези', 'Самопознание'];
+        var data = [79.6 , 1440 , 728.2, 590.2 , 720]; 
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: genres,
+                datasets: [{
+                    label: 'Сумма проданных книг в млн $',
+                    data: data,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)'
+                    ],
+                    hoverBackgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+				<!-- Анимация изменения цвета при наведении -->
+                animation: {
+                    duration: 1000
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Статистика по литературным жанрам в мире'
+                    },
+					<!-- Вывод точных данных в подсказке -->
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                return tooltipItems[0].label;
+                            },
+                            label: function(tooltipItem) {
+                                return 'Полученная прибыль за 2023 год составила ' + tooltipItem.formattedValue + ' млн $';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -6,7 +6,7 @@
   width:1200px;
   margin-left:auto;
   margin-right:auto;
-  text-align:left;
+  text-align: left;
 }
 .form_sketch {
   border-color:transparent;
@@ -2924,3 +2924,54 @@
 }
 #u194.hint.disabled {
 }
+#feedbackForm {
+    position: absolute;
+	left: 300px;
+    top: 325px; 
+    width: 600px;
+    background: inherit;
+    background-color: rgba(240, 240, 240, 1);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: "Times New Roman Полужирный", "Times New Roman Обычный", "Times New Roman", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 21px;
+    color: #978061;
+    padding: 20px; /* Внутренние отступы формы */
+    border-radius: 10px; /* Закругление углов формы */
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: calc(100% - 22px); /* Учитываем отступы и границу */
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+	font-family: "Times New Roman Полужирный", "Times New Roman Обычный", "Times New Roman", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+	color:#978061 ;
+}
+
+/* Стили для кнопки отправки */
+input[type="submit"] {
+    width: calc(100% - 22px); /* Учитываем отступы и границу */
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: #978061; 
+    color: #fff; 
+    cursor: pointer; 
+	font-size: 16px;
+    margin-top: 10px; /* Отступ сверху */
+}
+
+

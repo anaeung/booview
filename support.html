@@ -75,107 +75,113 @@
         </div>
       </div>
 
-      <div id="u179" class="ax_default box_1">
-        <div id="u179_div" class=""></div>
-        <div id="u179_text" class="text " style="display:none; visibility: hidden">
-          <p></p>
-        </div>
-      </div>
 
       <div id="u180" class="ax_default text_field">
         <div id="u180_div" class=""></div>
         <input id="u180_input" type="text" value="Заполните форму-заявление" class="u180_input"/>
       </div>
+	 <!-- Форма для отправки обращения пользователя -->
+	<form id="feedbackForm" onsubmit="return validateForm()">
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
 
-      <div id="u181" class="ax_default text_field">
-        <div id="u181_div" class=""></div>
-        <input id="u181_input" type="text" value="Email:" class="u181_input"/>
-      </div>
+    <label for="subject">Заголовок:</label><br>
+    <input type="text" id="subject" name="subject"><br>
 
-      <div id="u182" class="ax_default text_field">
-        <div id="u182_div" class=""></div>
-        <input id="u182_input" type="text" value="Заголовок:" class="u182_input"/>
-      </div>
+    <label for="type">Тип обращения:</label><br>
+    <select id="type" name="type">
+        <option value="Ошибка в работе сайта">Ошибка в работе сайта</option>
+        <option value="Новая функция">Новая функция</option>
+        <option value="Нарушение правил сервиса">Нарушение правил сервиса</option>
+        <option value="Улучшение">Улучшение</option>
+        <option value="Неточность в содержании">Неточность в содержании</option>
+    </select><br>
 
-      <div id="u183" class="ax_default text_field">
-        <div id="u183_div" class=""></div>
-        <input id="u183_input" type="text" value="Тип обращения:" class="u183_input"/>
-      </div>
+    <label for="section">Раздел:</label><br>
+    <select id="section" name="section">
+        <option value="Главная">Главная</option>
+        <option value="Авторы">Авторы</option>
+        <option value="Рецензии">Рецензии</option>
+        <option value="Библиотека">Библиотека</option>
+        <option value="Испытания">Испытания</option>
+        <option value="Путеводитель по сайту">Путеводитель по сайту</option>
+    </select><br>
 
-      <div id="u184" class="ax_default text_field">
-        <div id="u184_div" class=""></div>
-        <input id="u184_input" type="text" value="Раздел:" class="u184_input"/>
-      </div>
+    <label>Платформа:</label><br>
+	<div class="radio-label">
+		<input type="radio" id="platform_site" name="platform" value="site">
+		<label for="platform_site">Сайт</label>
+	</div>
+	<div class="radio-label">
+		<input type="radio" id="platform_mobile" name="platform" value="mobile">
+		<label for="platform_mobile">Мобильная версия</label>
+	</div>
+	<div class="radio-label">
+		<input type="radio" id="platform_app" name="platform" value="app">
+		<label for="platform_app">Приложение</label>
+	</div>
 
-      <div id="u185" class="ax_default text_field">
-        <div id="u185_div" class=""></div>
-        <input id="u185_input" type="text" value="Описание:" class="u185_input"/>
-      </div>
+		<label for="description">Описание:</label><br>
+		<textarea id="description" name="description" rows="4"></textarea><br>
 
-      <div id="u186" class="ax_default text_field">
-        <div id="u186_div" class=""></div>
-        <input id="u186_input" type="text" value="Платформа:" class="u186_input"/>
-      </div>
+		<input type="submit" value="Отправить">
+	</form>
+	<div id="userData"></div>
+	<!-- Внутренний скрипт для обработки данных; отображение данных -->
+	<script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var subject = document.getElementById("subject").value;
+            var description = document.getElementById("description").value;
 
-      <div id="u187" class="ax_default button">
-        <div id="u187_div" class=""></div>
-        <div id="u187_text" class="text ">
-          <p><span>Отправить</span></p>
-        </div>
-      </div>
+            if (!email.includes("@")) {
+                alert("Пожалуйста, введите корректный адрес почты");
+                return false;
+            }
 
-      <div id="u188" class="ax_default droplist">
-        <div id="u188_div" class=""></div>
-        <select id="u188_input" class="u188_input">
-          <option class="u188_input_option" value="Ошибка в работе сайта">Ошибка в работе сайта</option>
-          <option class="u188_input_option" value="Новая функция">Новая функция</option>
-          <option class="u188_input_option" value="Нарушение правил сервиса">Нарушение правил сервиса</option>
-          <option class="u188_input_option" value="Улучшение">Улучшение</option>
-          <option class="u188_input_option" value="Неточность в содержании">Неточность в содержании</option>
-        </select>
-      </div>
+            if (subject.trim() === "") {
+                alert("Поле заголовка не должно быть пустым, пожалуйста, введите данные");
+                return false;
+            }
 
-      <div id="u189" class="ax_default droplist">
-        <div id="u189_div" class=""></div>
-        <select id="u189_input" class="u189_input">
-          <option class="u189_input_option" value="Главная">Главная</option>
-          <option class="u189_input_option" value="Авторы">Авторы</option>
-          <option class="u189_input_option" value="Рецензии">Рецензии</option>
-          <option class="u189_input_option" value="Библиотека">Библиотека</option>
-          <option class="u189_input_option" value="Испытания">Испытания</option>
-          <option class="u189_input_option" value="Путеводитель по сайту">Путеводитель по сайту</option>
-        </select>
-      </div>
+            if (description.trim() === "") {
+                alert("Поле описания не должно быть пустым, пожалуйста, введите данные");
+                return false;
+            }
 
-      <div id="u190" class="ax_default text_field">
-        <div id="u190_div" class=""></div>
-        <input id="u190_input" type="text" value="" class="u190_input"/>
-      </div>
 
-      <div id="u191" class="ax_default droplist">
-        <div id="u191_div" class=""></div>
-        <select id="u191_input" class="u191_input">
-          <option class="u191_input_option" value="Сайт">Сайт</option>
-          <option class="u191_input_option" value="Мобильная версия">Мобильная версия</option>
-          <option class="u191_input_option" value="Приложение">Приложение</option>
-        </select>
-      </div>
+            if (description.length > 500) {
+                alert("Описание привышает 500 символов, пожалуйста, сократите свое обращение");
+                return false;
+            }
 
-      <div id="u192" class="ax_default text_field">
-        <div id="u192_div" class=""></div>
-        <input id="u192_input" type="text" value="" class="u192_input"/>
-      </div>
+            // Если форма прошла все проверки, вызываем функцию для отображения данных
+            displayUserData();
 
-      <div id="u193" class="ax_default text_field">
-        <div id="u193_div" class=""></div>
-        <input id="u193_input" type="text" value="" class="u193_input"/>
-      </div>
+            return true; 
+        }
 
-      <div id="u194" class="ax_default text_field">
-        <img id="u194_img" class="img " src="img/u194.svg" alt="">
-        <input id="u194_input" type="text" value="Связаться напрямую через почту" class="u194_input"/>
-      </div>
-    </div>
+	function displayUserData() {
+		var email = document.getElementById("email").value;
+		var subject = document.getElementById("subject").value;
+		var type = document.getElementById("type").value;
+		var section = document.getElementById("section").value;
+	var platform = document.querySelector('input[name="platform"]:checked').nextSibling.textContent.trim();
+		var description = document.getElementById("description").value;
+
+		var userDataString =
+			"Email: " + email + "\n" +
+			"Заголовок: " + subject + "\n" +
+			"Тип обращения: " + type + "\n" +
+			"Раздел: " + section + "\n" +
+			"Платформа: " + platform + "\n" +
+			"Описание: " + description;
+			
+
+		alert(userDataString);
+	}
+	document.getElementById("userDataContainer").innerHTML = userDataString;
+    </script>
     <script src="resources/scripts/axure/ios.js"></script>
   </body>
 </html>

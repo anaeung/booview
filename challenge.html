@@ -8,12 +8,17 @@
     <link href="files/challenge/styles.css" type="text/css" rel="stylesheet">
     <script src="data/document.js"></script>
     <script src="files/challenge/data.js"></script>
+	<!-- Внешний скрипт дляя задания с гипперссылкой ЛБ 12.1-->
+	<script src="lb12.1.js" defer></script> 
   </head>
   <body>
     <div id="base" class="">
 	</header>
       <div id="u135" class="ax_default image">
+	  <!-- Гипперссылка-изображение с переходом на новую страницу (внешний скрипт) -->
+	  <a href="#" id="imageLink">
         <img id="u135_img" class="img " src="img/u0.png" alt="">
+		</a>
         <div id="u135_text" class="text " style="display:none; visibility: hidden">
           <p></p>
         </div>
@@ -244,13 +249,6 @@
         </div>
       </div>
 	</footer>
-	<!-- SVG --> 
-	<svg viewBox="0 0 100 100" width="100px" height="100px"> 
-    <!-- Анимация для заливки --> 
-    <circle cx="54" cy="46" r="46" fill="green"> 
-      <animate attributeName="fill" values="green;black;brown;red" dur="30s" repeatCount="indefinite" /> 
-    </circle> 
-</svg>
     </div>
   </body>
 </html>

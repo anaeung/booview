@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 1</title>
+    <style>
+        #result {
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 25px;
+            color: red;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            font-size: 15px;
+            text-decoration: underline;
+        }
+		button {
+            padding: 10px 20px; 
+            font-size: 16px; 
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Определить, принадлежит ли начало координат треугольнику с пользовательскими вершинами</h1>
+    <p>Введите координаты вершин:</p>
+    <form>
+        <label for="x1">x1:</label>
+        <input type="number" id="x1" name="x1"><br><br>
+        <label for="y1">y1:</label>
+        <input type="number" id="y1" name="y1"><br><br>
+        <label for="x2">x2:</label>
+        <input type="number" id="x2" name="x2"><br><br>
+        <label for="y2">y2:</label>
+        <input type="number" id="y2" name="y2"><br><br>
+        <label for="x3">x3:</label>
+        <input type="number" id="x3" name="x3"><br><br>
+        <label for="y3">y3:</label>
+        <input type="number" id="y3" name="y3"><br><br>
+        <button type="submit">Проверить принадлежность начала координат</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // предотвращение отправки формы
+
+            // получение значения вершин из формы
+            var x1 = parseFloat(document.getElementById("x1").value);
+            var y1 = parseFloat(document.getElementById("y1").value);
+            var x2 = parseFloat(document.getElementById("x2").value);
+            var y2 = parseFloat(document.getElementById("y2").value);
+            var x3 = parseFloat(document.getElementById("x3").value);
+            var y3 = parseFloat(document.getElementById("y3").value);
+
+            // функция
+            function isPointInsideTriangle(x, y) {
+                // вычисляем площадь треугольника и площади трех подтреугольников
+                var fullTriangleArea = Math.abs((x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2)) / 2);
+                var subTriangle1Area = Math.abs((x*(y1-y2) + x1*(y2-y) + x2*(y-y1)) / 2);
+                var subTriangle2Area = Math.abs((x*(y2-y3) + x2*(y3-y) + x3*(y-y2)) / 2);
+                var subTriangle3Area = Math.abs((x*(y3-y1) + x3*(y1-y) + x1*(y-y3)) / 2);
+
+                return (subTriangle1Area + subTriangle2Area + subTriangle3Area == fullTriangleArea);
+            }
+
+            // проверяем принадлежность начала координат треугольнику
+            var resultElement = document.getElementById("result");
+            if (isPointInsideTriangle(0, 0)) {
+                resultElement.textContent = "Начало координат принадлежит треугольнику.";
+            } else {
+                resultElement.textContent = "Начало координат не принадлежит треугольнику.";
+            }
+        });
+    </script>
+</body>
+</html>

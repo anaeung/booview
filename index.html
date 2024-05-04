@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Booview -  книжный поиск </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="files/styles.css" type="text/css" rel="stylesheet">
+	<script src="files/data.js"></script>
+</head>
+<body>
+	<header>
+	<div id="menu-container">
+	<div id="logo"><img src="img/logo.png" alt="Логотип"></div>
+		<ul id="navbar">
+			<li><a href="index.html">|||</a>
+					<ul>
+						<li><a href="https://braincandy.com/?utm_source=google&utm_medium=cpc&utm_campaign=20550330631&utm_content=154289373998&utm_term=book%20library&gad_source=1&gclid=CjwKCAjw7-SvBhB6EiwAwYdCAbaYV6H31urndcQaXcDI7t3eGkv9Fr_h7aPHmz4M-P3pwA2NesDaiRoCiEUQAvD_BwE">Библиотека</a></li> 
+						<li><a href="toread.html">Что почитать?</a></li> 
+						<li><a href="selection.html">Подборки</a></li>
+						<li><a href="challenge.html">Испытания</a></li>
+						<li><a href="support.html">Служба поддержки</a></li> 
+					</ul>
+				</li>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="reviews.html">Обзоры</a></li>
+			<li><a href="info.html">Интересная информация</a>
+					<ul>
+						<li><a href="info.html#facts">Факты</a></li> 
+						<li><a href="info.html#title">Статистика</a></li>
+					</ul>
+				</li> 
+		</ul>
+	</div>
+	<div id="white-container">         
+		<input type="text" id="searchInput" placeholder="Поиск книг...">
+        <button id="search-button" onclick="searchBooks()">Найти</button></div>
+	</header>
+	<div class="image-container">
+	  <a href="toread.html"><img src="img/rec1.png" alt="Персональная подборка" class="image"></a>
+	  <a href="challenge.html"><img src="img/rec2.png" alt="Испытание" class="image"></a>
+	  <a href="selection.html"><img src="img/rec3.png" alt="Подборки" class="image"></a>
+	</div>
+
+	<div id=title><p>Что прочитать?</p></div>
+	<div class="image-row">
+	  <img src="img/b1.jpeg" alt="Обложка книги №1">
+	  <p class="image-caption" style="left:14px; top:650px;">Зеленая миля</p>
+	  <img src="img/b2.jpeg" alt="Обложка книги №2">
+	  <p class="image-caption" style="left: 193px; top:650px;">Гарри Поттер </p><span class="image-caption" style="left: 178px; top:689px;">и узник Азкабана</span>
+	  <img src="img/b3.jpeg" alt="Обложка книги №3">
+	  <p class="image-caption" style="left:380px; top:650px;">Прислуга</p>
+	  <img src="img/b4.jpeg" alt="Обложка книги №4">
+	  <p class="image-caption" style="left:545px; top:650px;">Продажное</p><span class="image-caption" style="left: 540px; top:689px;">королевство</span>
+	  <img src="img/b5.jpg" alt="Обложка книги №5">
+	  <p class="image-caption" style="left:735px; top:650px;">Убийство</p><span class="image-caption" style="left: 724px; top:689px;">в Восточном</span><span class="image-caption" style="left: 735px; top:707px;">экспрессе</span>
+	  <img src="img/b6.jpeg" alt="Обложка книги №6">
+	  <p class="image-caption" style="left:928px; top:650px;">Граф</p><span class="image-caption" style="left: 893px; top:689px;">Монте-Кристо</span>
+	  <img src="img/b7.jpeg" alt="Обложка книги №7">
+	  <p class="image-caption" style="left:1060px; top:650px;">Опиумная война</p>
+	</div>
+	
+	<div id=title style="top:720px;"><p>Книжные новости</p></div>
+		<div class="box" style="margin-top: 120px;">
+			<span class="box-text">ТОП-14 ожидаемых книг весной 2024 года</span>
+			<span class="box-textl"><br>Какие книги стоит прочитать? Все новинки могут быть отличным дополнением к нашей подборке книг на весну. Апрель и май 2024 года порадует читателей множеством интересных произведений: здесь есть и возвращение любимых авторов, и качественная нон-фикция, и ранее не переведенные на русский язык шедевры классической литературы.</span>
+		</div>
+		<div class="box">
+			<span class="box-text">"Черепахи – и нет им конца": адаптация юношеского романа Джона Грина для экрана</span>
+			<span class="box-textl"><br>Уже в эту неделю, 2 мая, в кинотеатрах начнется прокат подростковой драмы "Черепахи – и нет им конца". Фильм основан на романе Джона Грина с таким же названием. Позже его можно будет посмотреть на стриминговой платформе Max.</span>
+		</div>
+		<div class="box">
+			<span class="box-text">«Пикник на обочине»: цитаты из культовой фантастики Стругацких</span>
+			<span class="box-textl"><br>Братьев Стругацких можно смело отнести к мировым фантастам. Их книги переведены на множество языков. Они всегда готовы были экспериментировать в рамках жанра, писать социальную, научную и философскую фантастику. Самым ярким примером последнего поджанра является "Пикник на обочине".</span>
+		</div>
+		<div class="box">
+			<span class="box-text">Пробудите своего внутреннего писателя с использованием Книжного испытания</span>
+			<span class="box-textl"><br>Что нужно, чтобы стать автором? Очевидно, нужно начать писать. Но как это сделать? Откуда черпать идеи? Как создавать сюжеты и описывать персонажей? И есть множество других вопросов. Ответы на эти вопросы могут помочь... Книжные испытания booview. Какая связь здесь? Мы расскажем прямо сейчас.</span>
+		</div>
+		<div class="box">
+			<span class="box-text">«Терри Пратчетт. Жизнь со сносками»: живописная биография автора Плоского мира</span>
+			<span class="box-textl"><br>Многие факты из жизни Терри Пратчетта можно отнести к таким историям, которые сам мэтр юмористического фэнтези причислял к разряду «слишком хорошо, чтобы проверять». Предлагаем убедиться в этом с помощью книги «Терри Пратчетт. Жизнь со сносками». Это официальная биография знаменитого английского фантаста, написанная его многолетним личным помощником и другом Робом Уилкинсом. </span>
+		</div>
+	<div id=title ><p>Лучшие рецензии</p></div>
+	<div class="review">
+		<img src="img/b8.jpg" alt="Обложка книги">
+		<p class="text" style="font-size: 27px;">Голодные игры<br> &#9733; 4.8</p>
+		<span class="text" >Довольно известная книга и ещё больше известный фильм. Интерес к книге возник почти сразу после просмотра фильма, и  ещё тогда было желание прочесть все книги цикла и узнать финал, но что-то не сложилось, не срослось. Мне почему-то тогда не понравилась книга и я на долго про неё забыла. Но так сложилось, что она выпала в новогоднем флешмобе. И вот оно, звёзды сошлись. Мне так понравилась книга! Я читала её не отрываясь, стараясь не пропустить ни одного действия. Нужно уточнить, что фильм совпадает с книгой во многом, за исключением некоторых моментов он полностью следует книжному сюжету.</span>
+	</div>
+	<div class="review" style="margin-left: 645px;">
+		<img src="img/b9.jpg" alt="Обложка книги">
+		<p class="text" style="font-size: 27px;">Джейн Эйр<br> &#9733; 4.9</p>
+		<span class="text" >К своим 28 годам я наконец-то прочитала "Джейн Эйр", но лучше поздно чем никогда. Думаю что Джэйн - одна из самых сильных героинь что мне попадались в литературе (не берем в оборот мстительных воительниц из жанра фэнтези). Уже начиная с детского возраста, она показывает небывалую стойкость духа. А учитывая, что роман по большей части автобиографичен, стоит отдать должное самой Шарлотте Бронте. Первое впечатление о знаменитом мистере Рочестере у меня было отрицательное: он показался мне чрезмерно заносчивым и высокомерным, со временем оно конечно поменялось. Джен наоборот сразу расположила к себе. </span>
+	</div>
+<footer class="footer" style="margin-top: 500px;">
+    <div class="footer-content">
+     <div>&copy; Booview 2024<?php echo date("Y"); ?></div>
+    <div>Контактная информация: <a href="mailto:booviw_help@gmail.com" style="color: #A52A2A;">booviw_help@gmail.com</a></div>
+    <div style="font-weight: bold;">Все материалы, размещенные на этом сайте, защищены законом <a href="https://online.zakon.kz/Document/?doc_id=1005798" style="color: #A52A2A;">об авторских правах. </a>Пожалуйста, уважайте права авторов и соблюдайте законы об <br>интеллектуальной собственности. Любое незаконное использование материалов без согласия правообладателя <br>может повлечь за собой юридическую ответственность.</div>
+	<p style="font-weight: bold; font-style: italic; font-size: 18px;">Миссия нашего книжного сайта заключается в том, чтобы вдохновлять людей на чтение, расширять их кругозор, и способствовать <br> личностному росту через доступ к качественной литературе. Мы стремимся создать виртуальное пространство, где читатели <br>могут наслаждаться книгами различных жанров и направлений, обмениваться впечатлениями, идеями и мнениями с другими <br>любителями литературы, а также обогащать свой интеллект и духовный мир.</p>
+    </div>
+</footer>
+</body>
+</html>

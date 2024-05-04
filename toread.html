@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Тест от Booview </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="files/styles.css" type="text/css" rel="stylesheet">
+	<script src="files/data.js"></script>
+</head>
+<body>
+	<header>
+	<div id="menu-container">
+	<div id="logo"><img src="img/logo.png" alt="Логотип"></div>
+		<ul id="navbar">
+			<li><a href="index.html">|||</a>
+					<ul>
+						<li><a href="https://braincandy.com/?utm_source=google&utm_medium=cpc&utm_campaign=20550330631&utm_content=154289373998&utm_term=book%20library&gad_source=1&gclid=CjwKCAjw7-SvBhB6EiwAwYdCAbaYV6H31urndcQaXcDI7t3eGkv9Fr_h7aPHmz4M-P3pwA2NesDaiRoCiEUQAvD_BwE">Библиотека</a></li> 
+						<li><a href="toread.html">Что почитать?</a></li> 
+						<li><a href="selection.html">Подборки</a></li>
+						<li><a href="challenge.html">Испытания</a></li>
+						<li><a href="support.html">Служба поддержки</a></li> 
+					</ul>
+				</li>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="reviews.html">Обзоры</a></li>
+			<li><a href="info.html">Интересная информация</a>
+					<ul>
+						<li><a href="info.html#facts">Факты</a></li> 
+						<li><a href="info.html#title">Статистика</a></li>
+					</ul>
+				</li> 
+		</ul>
+	</div>
+	<div id="white-container">         
+		<input type="text" id="searchInput" placeholder="Поиск книг...">
+        <button id="search-button" onclick="searchBooks()">Найти</button></div>
+	</header>
+	   <div id=tt_support style="top: -180px;"><p>Не можете выбрать книгу?</p></div>
+	<div id=st_support style="top: -90px; left: 160px">
+          <p> ответьте честно на все вопросы и мы подскажем вам, жанр книги, которую следует прочитать именно вам.</p>
+        </div>
+	<div id=ttform style="top: -65px; left: 270px"><p>Выберите один из предложенных вариантов ответа</p></div>
+<form id="quizForm" style="margin-top: 250px;">
+    <h2>Вопрос 1: Какие персонажи вам ближе всего по духу?</h2>
+    <select name="q1">
+        <option value="Триллеры">Смелые и независимые</option>
+        <option value="Романы">Загадочные и меланхоличные</option>
+        <option value="Детективы">Эксцентричные и экспериментаторы</option>
+        <option value="Фэнтези">Интеллектуальные и аналитические</option>
+        <option value="Самопознание"> Эмпатичные и вдохновляющие</option>
+    </select>
+
+    <h2>Вопрос 2: Какой тип сюжета вам нравится больше всего?</h2>
+    <select name="q2">
+        <option value="Триллеры">Остросюжетный</option>
+        <option value="Романы">Романтический</option>
+        <option value="Детективы">Загадочный</option>
+        <option value="Фэнтези">Фантастический</option>
+        <option value="Самопознание">Учебный</option>
+    </select>
+
+    <h2>Вопрос 3: Какая тема книг вас привлекает больше всего?</h2>
+    <select name="q3">
+        <option value="Триллеры">Любовь и отношения</option>
+        <option value="Романы">Тайны и загадки</option>
+        <option value="Детективы">Преступления и расследования</option>
+        <option value="Фэнтези">Фантастика и приключения</option>
+        <option value="Самопознание">Личностный рост и саморазвитие</option>
+    </select>
+    <h2>Вопрос 4: Какой из вариантов отдыха на выходных вам более интересен?</h2>
+    <select name="q4">
+        <option value="Триллеры">Попробовать что-то новое, например, заняться экстремальными видами спорта</option>
+        <option value="Романы">Провести время в музее или галерее, наслаждаясь искусством</option>
+        <option value="Детективы"> Провести время дома, читая книгу или смотря сериалы</option>
+        <option value="Фэнтези">Отправиться в кино или театр на просмотр интересного спектакля</option>
+        <option value="Самопознание">Сделать пикник на свежем воздухе и насладиться природой</option>
+    </select>
+	    <h2>Вопрос 5: Какое из утверждений больше всего соответствует вашему мировоззрению?</h2>
+    <select name="q5">
+        <option value="Триллеры">"Жизнь — это не только серьезные моменты, но и веселые приключения."</option>
+        <option value="Романы">"История предоставляет нам уроки, которые мы должны учесть."</option>
+        <option value="Детективы">Всегда есть место для загадок и тайн в нашей жизни."</option>
+        <option value="Фэнтези">"Мир вокруг нас так богат и разнообразен, как и наше воображение."</option>
+        <option value="Самопознание">"Природа вдохновляет нас своей красотой и гармонией."</option>
+    </select>
+	    <h2>Вопрос 6: Какое время года вы предпочитаете?</h2>
+    <select name="q6">
+        <option value="Триллеры">Лето, когда можно весело проводить время с друзьями на природе</option>
+        <option value="Романы">Весна, когда пробуждается природа и начинаются новые возможности</option>
+        <option value="Детективы">Осень, когда вокруг много загадочного и таинственного</option>
+        <option value="Фэнтези">Зима, когда можно уйти в мир фантазии и сказок</option>
+        <option value="Самопознание">Нет предпочтений, люблю все времена года</option>
+    </select>
+	    <h2>Вопрос 7: Какое занятие вы предпочитаете в свободное время?</h2>
+    <select name="q7">
+        <option value="Триллеры">Путешествия</option>
+        <option value="Романы">Рисование</option>
+        <option value="Детективы">Кулинария</option>
+        <option value="Фэнтези">Изучение иностранных языков</option>
+        <option value="Самопознание">Садоводство</option>
+    </select>
+	    <h2>Вопрос 8: Какой тип путешествий вам нравится больше всего?</h2>
+    <select name="q8">
+        <option value="Триллеры"> Путешествия с друзьями и веселые приключения</option>
+        <option value="Романы"> Путешествия в прошлое или культурные поездки</option>
+        <option value="Детективы">Путешествия по загадочным городам и местам</option>
+        <option value="Фэнтези">Путешествия в мир фантазии и воображения</option>
+        <option value="Самопознание">Путешествия в дикую природу и приключения на открытом воздухе</option>
+    </select>
+	    <h2>Вопрос 9: Какую идею вы бы хотели исследовать в книге?</h2>
+    <select name="q9">
+        <option value="Триллеры">Взаимосвязь между людьми и технологиями</option>
+        <option value="Романы">Поиск смысла жизни и справедливости</option>
+        <option value="Детективы">Сложные отношения и интриги</option>
+        <option value="Фэнтези">Парадоксы времени и пространства</option>
+        <option value="Самопознание">Природа человеческой души</option>
+    </select>
+	    <h2>Вопрос 10: Какую роль в книге вы предпочитаете?</h2>
+    <select name="q10">
+        <option value="Триллеры">Главный герой, исследующий мир</option>
+        <option value="Романы">Второстепенный персонаж, поддерживающий главного героя</option>
+        <option value="Детективы">Злодей, который вызывает интригу</option>
+        <option value="Фэнтези">Наблюдатель, который внимательно наблюдает за событиями</option>
+        <option value="Самопознание">Мудрый наставник, передающий знания и опыт</option>
+    </select>
+
+    <br><br>
+    <input type="submit" value="Отправить">
+</form>
+<div id="result"></div>
+<script>
+    function processQuiz() {
+        const quizForm = document.getElementById('quizForm');
+        quizForm.onsubmit = function(event) {
+            event.preventDefault();
+
+            // Считываем ответы пользователя
+            const answers = {
+                q1: quizForm.q1.value,
+                q2: quizForm.q2.value,
+                q3: quizForm.q3.value,
+				q4: quizForm.q4.value,
+				q5: quizForm.q5.value,
+				q6: quizForm.q6.value,
+				q7: quizForm.q7.value,
+				q8: quizForm.q8.value,
+				q9: quizForm.q9.value,
+				q10: quizForm.q10.value
+                
+            };
+
+            // Подсчитываем ответы
+            let genreCounts = {};
+            for (const question in answers) {
+                const genre = answers[question];
+                if (genreCounts[genre]) {
+                    genreCounts[genre]++;
+                } else {
+                    genreCounts[genre] = 1;
+                }
+            }
+
+            // Находим наиболее популярный жанр
+            let maxGenre = '';
+            let maxCount = 0;
+            for (const genre in genreCounts) {
+                if (genreCounts[genre] > maxCount) {
+                    maxGenre = genre;
+                    maxCount = genreCounts[genre];
+                }
+            }
+
+            // Выводим результат
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = `Самый подходящий вам жанр - ${maxGenre}`;
+        };
+    }
+    window.onload = processQuiz;
+</script>
+<footer class="footer" style="margin-top: 35px;">
+    <div class="footer-content">
+     <div>&copy; Booview 2024<?php echo date("Y"); ?></div>
+    <div>Контактная информация: <a href="mailto:booviw_help@gmail.com" style="color: #A52A2A;">booviw_help@gmail.com</a></div>
+    <div style="font-weight: bold;">Все материалы, размещенные на этом сайте, защищены законом <a href="https://online.zakon.kz/Document/?doc_id=1005798" style="color: #A52A2A;">об авторских правах. </a>Пожалуйста, уважайте права авторов и соблюдайте законы об <br>интеллектуальной собственности. Любое незаконное использование материалов без согласия правообладателя <br>может повлечь за собой юридическую ответственность.</div>
+	<p style="font-weight: bold; font-style: italic; font-size: 18px;">Миссия нашего книжного сайта заключается в том, чтобы вдохновлять людей на чтение, расширять их кругозор, и способствовать <br> личностному росту через доступ к качественной литературе. Мы стремимся создать виртуальное пространство, где читатели <br>могут наслаждаться книгами различных жанров и направлений, обмениваться впечатлениями, идеями и мнениями с другими <br>любителями литературы, а также обогащать свой интеллект и духовный мир.</p>
+    </div>
+</footer>
+</body>
+</html>

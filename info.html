@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Booview -  книжный поиск </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link id="mainStylesheet" href="files/styles.css" type="text/css" rel="stylesheet">
+	<script src="files/data.js"></script>
+</head>
+<body>
+	<header>
+	<div id="menu-container">
+	<div id="logo"><img id="logoImg"src="img/logo.png" alt="Логотип"></div>
+	<button onclick="changeStylesheet()" id="styleButton"></button>
+		<ul id="navbar">
+			<li> <a href="index.html">|||</a>
+					<ul>
+						<li><a href="index.html">Главная</a>
+						<li><a href="toread.html">Книжный жанр для вас</a></li> 
+						<li><a href="selection.html">Подборки</a></li>
+						<li><a href="challenge.html">Испытания</a></li>
+						<li><a href="reviews.html">Обзоры</a></li>
+						<li><a href="info.html">Интересное</a>
+						<li><a href="support.html">Служба поддержки</a></li> 
+					</ul>
+		</ul>
+	</div>
+	<div id="white-container">         
+		<input type="text" id="searchInput" placeholder="Поиск книг...">
+        <button id="search-button" onclick="searchBooks()">Найти</button></div>
+	</header>
+	<div id=tt_support style="margin-left: 90px;"><p>Интересно о полезном</p></div>
+	<div id=st_support style="margin-right: 250px;">
+          <p> здесь вы можете найти интересные факты и статистику о книгах, которые помогут вам расширить свой кругозор</p>
+        </div>
+	<div id=facts class="test" >
+		<img src="img/b11.webp" alt="Обложка книги">
+		<p class="text" style="font-size: 27px;">Реклама прошлого</p>
+		<span class="text" > Романы в XIX веке были вместо сериалов. Они публиковались в журналах по главам, и читатель с нетерпением ждал каждого сюжетного поворота. Так, роман Федора Достоевского «Преступление и наказание» публиковался в журнале «Русский вестник» весь 1866 год. Только после выхода всех «эпизодов» рукопись наконец переходила в книжный формат.</span>
+	</div>
+	<div class="test">
+		<img src="img/b12.webp" alt="Обложка книги">
+		<p class="text" style="font-size: 27px;">  Капля дегтя </p>
+		<span class="text" > При составлении даже самых благоприятных отзывов на книги, в более чем половине случаев читатели добавляют критические замечания или упоминают о недостатках, которые они заметили в произведении. Противоположно этому то, что при написании негативных отзывов, положительные моменты, выявленные читателями, редко присутствуют. </span>
+	</div>
+	<div class="test" >
+		<img src="img/b13.webp" alt="Обложка книги">
+		<p class="text" style="font-size: 27px;"> Нас не остановить! </p>
+		<span class="text" > При медленном чтении в среднем происходит от 0,5 до 0,7 неоправданных возвратов к прочитанному на одну строку. Такие возвраты могут быть вызваны необходимостью уточнения деталей, которые могли быть упущены при первом чтении. Этот процесс важен для того, чтобы полноценно усвоить информацию и глубже вникнуть в суть текста. </span>
+	</div>
+	<div id=title style="top:720px; left: 300px"><p>Статистика жанров по проданным копиям произведений</p></div>
+
+	<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+    // данные для диаграммы
+    var genres = ['Триллеры', 'Романы', 'Детективы', 'Фэнтези', 'Самопознание'];
+    var data = [79.6 , 1440 , 728.2, 590.2 , 720]; 
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: genres,
+            datasets: [{
+                label: 'Сумма проданных книг в млн $',
+                data: data,
+                backgroundColor: [
+                    'rgba(178,34,34, 0.5)',
+                    'rgba(244,164,96, 0.5)',
+                    'rgba(154,205,50, 0.5)',
+                    'rgba(65,105,225, 0.5)',
+                    'rgba(210,180,140, 0.5)'
+                ],
+                hoverBackgroundColor: [
+                    'rgba(178,34,34, 1)',
+                    'rgba(244,164,96, 1)',
+                    'rgba(154,205,50, 1)',
+                    'rgba(65,105,225, 1)',
+                    'rgba(210,180,140, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            animation: {
+                duration: 1000
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Статистика по литературным жанрам в мире'
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            return tooltipItems[0].label;
+                        },
+                        label: function(tooltipItem) {
+                            return 'Полученная прибыль за 2023 год составила ' + tooltipItem.formattedValue + ' млн $';
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+	<footer class="footer" style="margin-top: 50px;">
+		<div class="footer-content">
+		 <div>&copy; Booview 2024<?php echo date("Y"); ?> <br> Над проектом работала: студентка группы ИС-22 Сазонова Анастасия.</div>
+		<div style="font-weight: bold;">Все материалы, размещенные на этом сайте, защищены законом <a href="https://online.zakon.kz/Document/?doc_id=1005798" style="color: #A52A2A;">об авторских правах. </a>Пожалуйста, уважайте права авторов и соблюдайте законы об <br>интеллектуальной собственности.</div>
+		<div>Контактная информация: <a href="mailto:booviw_help@gmail.com" style="color: #A52A2A;">booviw_help@gmail.com</a></div>
+		<div  style="font-weight: bold;">Найти нас в социальных сетях:</div>
+			<a href="https://www.facebook.com/" target="_blank"><img src="img/fb.png" alt="Facebook" style="width: 40px;margin-top: 15px; margin-left:10px;"></a>
+			<a href="https://www.instagram.com/" target="_blank"><img src="img/inst.png" alt="Instagram" style="width: 40px; margin-top: 15px; margin-left:10px;"></a>
+			<a href="https://twitter.com/" target="_blank"><img src="img/twitter.png" alt="Twitter" style="width: 40px; margin-top: 15px; margin-left:10px;"></a>
+		</div>
+	</footer>
+</body>
+</html>

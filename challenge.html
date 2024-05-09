@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Испытания</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link id="mainStylesheet" href="files/styles.css" type="text/css" rel="stylesheet">
+	<script src="files/data.js"></script>
+</head>
+<body>
+	<header>
+	<div id="menu-container">
+	<div id="logo"><img id="logoImg"src="img/logo.png" alt="Логотип"></div>
+	<button onclick="changeStylesheet()" id="styleButton"></button>
+		<ul id="navbar">
+			<li> <a href="index.html">|||</a>
+					<ul>
+						<li><a href="index.html">Главная</a>
+						<li><a href="toread.html">Книжный жанр для вас</a></li> 
+						<li><a href="selection.html">Подборки</a></li>
+						<li><a href="challenge.html">Испытания</a></li>
+						<li><a href="reviews.html">Обзоры</a></li>
+						<li><a href="info.html">Интересное</a>
+						<li><a href="support.html">Служба поддержки</a></li> 
+					</ul>
+		</ul>
+	</div>
+	<div id="white-container">         
+		<input type="text" id="searchInput" placeholder="Поиск книг...">
+        <button id="search-button" onclick="searchBooks()">Найти</button></div>
+	</header>
+	
+	<div id=tt2 ><p>Испытания</p></div>
+	<div id=st1>
+          <p>бросьте вызов самим себе, а также соревнуйтесь с другими <br> участниками сайта, чтобы достигнуть новых книжных вершин</p>
+    </div>
+	
+		<div class="cssSlider" style="margin-top:20px;">
+			<ul class="slides">
+				<li id="slide1"><img src="img/img1.webp" alt="" /></li>
+				<li id="slide2"><img src="img/img2.webp" alt="" /></li>
+				<li id="slide3"><img src="img/img3.webp" alt="" /></li>
+				<li id="slide4"><img src="img/img4.webp" alt="" /></li>
+			</ul>
+			<ul class="thumbnails">
+				<li><a href="#slide1"><img src="img/img1.webp" /></a></li>
+				<li><a href="#slide2"><img src="img/img2.webp" /></a></li>
+				<li><a href="#slide3"><img src="img/img3.webp" /></a></li>
+				<li><a href="#slide4"><img src="img/img4.webp" /></a></li>
+			</ul>
+		</div>
+
+	<footer class="footer" style="margin-top: 50px;">
+		<div class="footer-content">
+		 <div>&copy; Booview 2024<?php echo date("Y"); ?> <br> Над проектом работала: студентка группы ИС-22 Сазонова Анастасия.</div>
+		<div style="font-weight: bold;">Все материалы, размещенные на этом сайте, защищены законом <a href="https://online.zakon.kz/Document/?doc_id=1005798" style="color: #A52A2A;">об авторских правах. </a>Пожалуйста, уважайте права авторов и соблюдайте законы об <br>интеллектуальной собственности.</div>
+		<div>Контактная информация: <a href="mailto:booviw_help@gmail.com" style="color: #A52A2A;">booviw_help@gmail.com</a></div>
+		<div  style="font-weight: bold;">Найти нас в социальных сетях:</div>
+			<a href="https://www.facebook.com/" target="_blank"><img src="img/fb.png" alt="Facebook" style="width: 40px;margin-top: 15px; margin-left:10px;"></a>
+			<a href="https://www.instagram.com/" target="_blank"><img src="img/inst.png" alt="Instagram" style="width: 40px; margin-top: 15px; margin-left:10px;"></a>
+			<a href="https://twitter.com/" target="_blank"><img src="img/twitter.png" alt="Twitter" style="width: 40px; margin-top: 15px; margin-left:10px;"></a>
+		</div>
+	</footer>
+</body>
+</html>
